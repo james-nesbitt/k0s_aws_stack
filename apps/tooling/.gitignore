@@ -1,0 +1,7 @@
+
+# ansible related artifacts
+.fact_cache
+hosts.ini
+
+# the module also writes the k0s yaml
+*.yaml

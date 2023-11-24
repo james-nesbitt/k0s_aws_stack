@@ -1,0 +1,61 @@
+// used to name infrastructure (CHANGE THIS)
+//name = "test"
+
+aws_region = "us-east-2"
+
+k0sctl = {
+    version = "v1.28.4+k0s.0"
+
+    no_wait = false
+    no_drain = false
+
+    force = false
+
+    disable_downgrade_check = false
+
+    restore_from = ""
+    
+    skip_create =  false
+    skip_destroy = true
+}
+
+// configure the network stack
+network = {
+  cidr                 = "172.31.0.0/16"
+  public_subnet_count  = 3
+  private_subnet_count = 0 // if 0 then no private nodegroups allowed
+}
+
+// one definition for each group of machines to include in the stack
+nodegroups = {
+  // A stack
+  "ACon" = { // controllers for A
+    platform    = "ubuntu_20.04"
+    count       = 3
+    type        = "m6a.2xlarge"
+    volume_size = 100
+    role        = "controller"
+    public      = true
+    user_data   = ""
+  },
+  "AWrk_1" = { // workers for A
+    platform    = "ubuntu_20.04"
+    count       = 6
+    type        = "c6a.xlarge"
+    volume_size = 100
+    public      = true
+    role        = "worker"
+    user_data   = ""
+  }
+}
+
+// Override or append the library of platforms
+//custom_platforms = {
+//  "ubuntu_22.04" : {
+//    "ami_name" : "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*",
+//    "owner" : "099720109477",
+//    "user" : "ubuntu",
+//    "interface" : "ens5",
+//    "connection" : "ssh"
+//  }
+//}
