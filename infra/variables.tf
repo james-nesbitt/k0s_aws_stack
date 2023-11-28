@@ -1,7 +1,12 @@
 
-variable "aws_region" {
-  type    = string
-  default = "us-east-1"
+variable "aws" {
+  description = "AWS configuration"
+  type = object({
+    region = string
+  })
+  default = {
+    region = "us-east-1"
+  }
 }
 
 variable "name" {
@@ -53,7 +58,7 @@ variable "k0sctl" {
   type = object({
     version = string
 
-    no_wait = bool
+    no_wait  = bool
     no_drain = bool
 
     force = bool
@@ -61,37 +66,14 @@ variable "k0sctl" {
     disable_downgrade_check = bool
 
     restore_from = string
-    
-    skip_create =  bool
-    skip_destroy= bool
+
+    skip_create  = bool
+    skip_destroy = bool
   })
-}
-
-variable "k0s_version" {
-  type    = string
-  default = "23.0.3"
-}
-
-variable "expire_duration" {
-  description = "The max time to allow this cluster to avoid early termination. Can use 'h', 'm', 's' in sane combinations, eg, '15h37m18s'."
-  type        = string
-  default     = "120h"
 }
 
 variable "extra_tags" {
   description = "Extra tags that will be added to all provisioned resources, where possible."
   type        = map(string)
   default     = {}
-}
-
-variable "k0s_skip_install" {
-  description = ""
-  type = bool
-  default = false
-}
-
-variable "k0s_skip_uninstall" {
-  description = ""
-  type = bool
-  default = false
 }

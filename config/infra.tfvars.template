@@ -1,7 +1,9 @@
 // used to name infrastructure (CHANGE THIS)
 //name = "test"
 
-aws_region = "us-east-2"
+aws = {
+    region = "us-east-2"
+}
 
 k0sctl = {
     version = "v1.28.4+k0s.0"

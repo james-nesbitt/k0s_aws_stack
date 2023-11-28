@@ -36,7 +36,7 @@ resource "k0sctl_config" "cluster" {
       for_each = [for k, lh in local.k0sctl_hosts : lh if lh.connection == "ssh"]
 
       content {
-	role = host.value.role
+        role = host.value.role
         ssh {
           address  = host.value.address
           user     = host.value.ssh_user
