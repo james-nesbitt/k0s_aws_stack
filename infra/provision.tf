@@ -7,7 +7,7 @@ locals {
 # PROVISION MACHINES/NETWORK
 module "provision" {
   source = "./provision"
-  region = var.aws_region
+  region = var.aws.region
 
   name = var.name
   tags = local.tags
