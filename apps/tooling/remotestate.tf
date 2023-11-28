@@ -9,4 +9,5 @@ data "terraform_remote_state" "infra" {
 locals {
   nodegroups = data.terraform_remote_state.infra.outputs.nodes
   k0sctl_yaml = data.terraform_remote_state.infra.outputs.k0sctl_yaml
+  kube_yaml = data.terraform_remote_state.infra.outputs.kube_yaml
 }
