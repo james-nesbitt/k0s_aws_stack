@@ -3,7 +3,8 @@ provider_installation {
 	# and forces Terraform to look for the launchpad provider plugin in the
 	# given directory.
 	dev_overrides {
-	#	"mirantis/k0sctl" = "/home/jnesbitt/Documents/Mirantis/tools/terraform-provider-k0sctl/dist/terraform-provider-k0sctl_linux_amd64_v1"
+		# if you check out the k0sctl tf provider, and run `make local`, then the following path should exist
+		"mirantis/k0sctl" = "path/to/my/terraform-provider-k0sctl/dist/terraform-provider-k0sctl_linux_amd64_v1"
 	}
 
 	# For all other providers, install them directly from their origin provider

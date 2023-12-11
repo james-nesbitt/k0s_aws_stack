@@ -21,3 +21,21 @@ resource "local_file" "ansible_inventory" {
   content  = local.ansible_inventory
   filename = "hosts.ini"
 }
+
+resource "local_file" "ansible" {
+  content = <<EOF
+SCRIPT_DIR=$( cd -- "$( dirname -- "$0" )" &> /dev/null && pwd )
+ANSIBLE_CONFIG=$SCRIPT_DIR/ansible.cfg ansible --inventory=$SCRIPT_DIR/hosts.ini $@
+EOF
+  filename = "ansible"
+  file_permission = 0777
+}
+
+resource "local_file" "ansible_console" {
+  content = <<EOF
+SCRIPT_DIR=$( cd -- "$( dirname -- "$0" )" &> /dev/null && pwd )
+ANSIBLE_CONFIG=$SCRIPT_DIR/ansible.cfg ansible-console --inventory=$SCRIPT_DIR/hosts.ini $@
+EOF
+  filename = "ansible-console"
+  file_permission = 0777
+}
