@@ -10,27 +10,27 @@ We have no comprehensive tooling, as design requirements are still short.
 Currently we are writing smaller support tooling, more to define behaviour than for
 comprehensive usage.
 
-### Stack
+### Chart
 
 A small bash script that assists in running terraform commands for individual charts
 
 e.g. start the chart
 ```
-$/> ./stack {chart} init
-$/> ./stack {chart} apply
+$/> ./chart {chart} init
+$/> ./chart {chart} apply
 ```
 
 e.g. destroy the chart
 ```
-$/> ./stack {chart} destroy
+$/> ./chart {chart} destroy
 ```
 
-##### stack debug mode
+##### chart debug mode
 
 Running in debug mode applies `TF_LOG=debug` to terraform runs.
 
 ```
-$/> ./stack --debug {chart} apply -auto-approve
+$/> ./chart --debug {chart} apply -auto-approve
 ```
 
 There is an equivalent `--info` mode.
@@ -42,7 +42,7 @@ You have two options for tfvars:
 1. use an auto.tfvars[.json] in your chart
 2. create a file ./config/{key}.tfvars where key is the path to the chart, but replacing
    `/` with `_`.
-3. add a `-var=` or `-var-file=` flag to the stack command after the command.
+3. add a `-var=` or `-var-file=` flag to the chart command after the command.
 
 Option #1 works well for default config, or things that are not commonly tuned.
 Option #2 allows keeping all of the config in one place.
@@ -50,7 +50,7 @@ Option #2 allows keeping all of the config in one place.
 ## Charts
 
 The stack is composed of multiple charts.  The charts are equivalent in priority with the
-exception of the `infra` chart, which is expected to provision and install the base stack.
+exception of the `infra` chart, which is expected to provision and install the base chart.
 
 The charts are independent in runs, but coupled in two ways:
 1. there is some common configuration tfvars at the top level
