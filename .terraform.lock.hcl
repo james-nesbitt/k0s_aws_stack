@@ -5,6 +5,7 @@ provider "registry.terraform.io/hashicorp/aws" {
   version     = "5.26.0"
   constraints = ">= 5.0.0, >= 5.26.0"
   hashes = [
+    "h1:N6Iu1W6tvozB4RsClM9aHPuZhrKD6GCUAjlnl8THcLs=",
     "h1:UkBMGEScvNP+9JDzKXGrgj931LngYpIB8TBBUY+mvdg=",
     "zh:11a4062491e574c8e96b6bc7ced67b5e9338ccfa068223fc9042f9e1e7eda47a",
     "zh:4331f85aeb22223ab656d04b48337a033f44f02f685c8def604c4f8f4687d10f",
@@ -27,6 +28,7 @@ provider "registry.terraform.io/hashicorp/aws" {
 provider "registry.terraform.io/hashicorp/local" {
   version = "2.4.0"
   hashes = [
+    "h1:Bs7LAkV/iQTLv72j+cTMrvx2U3KyXrcVHaGbdns1NcE=",
     "h1:R97FTYETo88sT2VHfMgkPU3lzCsZLunPftjSI5vfKe8=",
     "zh:53604cd29cb92538668fe09565c739358dc53ca56f9f11312b9d7de81e48fab9",
     "zh:66a46e9c508716a1c98efbf793092f03d50049fa4a83cd6b2251e9a06aca2acf",
@@ -47,6 +49,7 @@ provider "registry.terraform.io/hashicorp/time" {
   version = "0.9.1"
   hashes = [
     "h1:NUv/YtEytDQncBQ2mTxnUZEy/rmDlPYmE9h2iokR0vk=",
+    "h1:UHcDnIYFZ00uoou0TwPGMwOrE8gTkoRephIvdwDAK70=",
     "zh:00a1476ecf18c735cc08e27bfa835c33f8ac8fa6fa746b01cd3bcbad8ca84f7f",
     "zh:3007f8fc4a4f8614c43e8ef1d4b0c773a5de1dcac50e701d8abc9fdc8fcb6bf5",
     "zh:5f79d0730fdec8cb148b277de3f00485eff3e9cf1ff47fb715b1c969e5bbd9d4",
@@ -65,6 +68,7 @@ provider "registry.terraform.io/hashicorp/time" {
 provider "registry.terraform.io/hashicorp/tls" {
   version = "4.0.4"
   hashes = [
+    "h1:Wd3RqmQW60k2QWPN4sK5CtjGuO1d+CRNXgC+D4rKtXc=",
     "h1:pe9vq86dZZKCm+8k1RhzARwENslF3SXb9ErHbQfgjXU=",
     "zh:23671ed83e1fcf79745534841e10291bbf34046b27d6e68a5d0aab77206f4a55",
     "zh:45292421211ffd9e8e3eb3655677700e3c5047f71d8f7650d2ce30242335f848",
@@ -78,5 +82,27 @@ provider "registry.terraform.io/hashicorp/tls" {
     "zh:c71b4cd40d6ec7815dfeefd57d88bc592c0c42f5e5858dcc88245d371b4b8b1e",
     "zh:dabcd52f36b43d250a3d71ad7abfa07b5622c69068d989e60b79b2bb4f220316",
     "zh:f569b65999264a9416862bca5cd2a6177d94ccb0424f3a4ef424428912b9cb3c",
+  ]
+}
+
+provider "registry.terraform.io/mirantis/k0sctl" {
+  version = "0.0.1"
+  hashes = [
+    "h1:4c8ElzNg0mm7MusWIqBsPBCl0Zs6pNY07ZiF98TpeGA=",
+    "zh:04e65535f4e4e1adad69bbfedf682d15cf9504a7cafa908523707b0c02942c14",
+    "zh:149a5a91376c4a23d3b20008b04c67b7a7bf38dcf2f6859835d7273072dc946e",
+    "zh:16ecc3a5af6d1008c545efc4830f77f71a73d06c40d3cc58e4cfceaae769e447",
+    "zh:2ba3ff73a87a968b331b93cbf028fa1c2143de5d78ef6f380d8272e18a244989",
+    "zh:31ec9555d352f5a600e6d1141d3f961558da6baa1f20f6366d8e51814de9eab3",
+    "zh:3bad1532e42b8fa1dadd30c402c45b12c2c8e5b80017ad9db8ea53257333afbf",
+    "zh:477a34511ee5b208529424a4f77337cbe0cb893f004a2fd3d91c62a3185b07b5",
+    "zh:4f6803d7ec037fcd8338059b18da2145593faf91f6f8865cbed7bcfbea35ba57",
+    "zh:72bbe8e72c17c51eabbcb11c1fb7d29f79967eb77a02935b9ccba6a6d88755b6",
+    "zh:881248ea60d5e667702e96447a665508ea778462f2610001cbb8e4f35a4c30cb",
+    "zh:88a287dbfbc6d078e486e0713ae63ba01ba4e96800e52c39b95ddda34b8a64b0",
+    "zh:890df766e9b839623b1f0437355032a3c006226a6c200cd911e15ee1a9014e9f",
+    "zh:c512103848860230aa2f67f7b375a967249ae27a57361747ef0eea4af05f6742",
+    "zh:da15a950104b7e5a5c6d23f9559c5aafcfd99171dd85b57299e185ac82f4b1ac",
+    "zh:db37b979522bc5cfa898e7f79e6c00f29f1a9720543fa5b8efcef2a44328cbcf",
   ]
 }

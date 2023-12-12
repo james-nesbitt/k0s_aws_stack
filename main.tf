@@ -6,8 +6,8 @@ locals {
   // build some tags for all things
   tags = merge(
     { # excludes kube-specific tags
-      "stack"   = var.name
-      "created" = time_static.now.rfc3339
+      "stack"  = var.name
+      "expire" = timeadd(time_static.now.rfc3339, var.expire_duration)
     },
     var.extra_tags
   )

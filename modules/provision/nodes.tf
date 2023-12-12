@@ -2,7 +2,7 @@
 module "nodegroups" {
   for_each = var.nodegroups
 
-  source = "./nodegroup"
+  source = "../nodegroup"
 
   name = "${var.name}-${each.key}"
 
@@ -34,7 +34,7 @@ locals {
 
   // a safer nodegroup listing that doesn't have any sensitive data.
   nodegroups_safer = { for k, ng in var.nodegroups : k => merge(ng, {
-    nodes : [ for j, i in module.nodegroups[k].nodes : {
+    nodes : [for j, i in module.nodegroups[k].nodes : {
       nodegroup       = k
       index           = j
       id              = "${k}-${j}"

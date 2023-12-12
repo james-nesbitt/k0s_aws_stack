@@ -20,7 +20,7 @@ locals {
 
 }
 
-//// launchpad install from provisioned cluster
+//// k0s install from provisioned cluster
 resource "k0sctl_config" "cluster" {
   # Tell the k0s provider to not bother installing/uninstalling
   skip_destroy = var.k0sctl.skip_destroy
