@@ -32,22 +32,24 @@ network = {
 nodegroups = {
   // A stack
   "ACon" = { // controllers for A
-    platform    = "ubuntu_20.04"
-    count       = 3
-    type        = "m6a.2xlarge"
-    volume_size = 100
-    role        = "controller"
-    public      = true
-    user_data   = ""
+    platform          = "ubuntu_20.04"
+    count             = 3
+    type              = "m6a.2xlarge"
+    volume_size       = 100
+    role              = "controller"
+    public            = t
+    user_data         = ""
+    k0s_install_flags = ""
   },
   "AWrk_1" = { // workers for A
-    platform    = "ubuntu_20.04"
-    count       = 6
-    type        = "c6a.xlarge"
-    volume_size = 100
-    public      = true
-    role        = "worker"
-    user_data   = ""
+    platform          = "ubuntu_20.04"
+    count             = 6
+    type              = "c6a.xlarge"
+    volume_size       = 100
+    public            = true
+    role              = "worker"
+    user_data         = ""
+    k0s_install_flags = ""
   }
 }
 

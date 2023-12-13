@@ -1,10 +1,11 @@
 # ansible related artifacts
 .fact_cache
-hosts.ini
+inventory.yml
 
 # the module also writes the k0s yaml
 *.yaml
 
 # don't add apps that we create
 ansible
+ansible-console
 kubectl
