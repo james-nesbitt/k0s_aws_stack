@@ -25,7 +25,7 @@ locals {
 
 resource "local_file" "common_ssh_public_key" {
   content  = local.common_ssh_key.private_key_openssh
-  filename = "${var.key_path}/${local.common_ssh_key_filename}"
+  filename = "${var.key_path}${local.common_ssh_key_filename}"
   
   provisioner "local-exec" {
     command = "chmod 0600 ${local_file.common_ssh_public_key.filename}"

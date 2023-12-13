@@ -50,6 +50,7 @@ variable "nodegroups" {
     role        = string
     public      = bool
     user_data   = string
+    k0s_install_flags = list(string)
   }))
 }
 
@@ -76,4 +77,10 @@ variable "extra_tags" {
   description = "Extra tags that will be added to all provisioned resources, where possible."
   type        = map(string)
   default     = {}
+}
+
+variable "winrm_password" {
+  description = "Password to use with winrm"
+  type = string
+  default = ""
 }
