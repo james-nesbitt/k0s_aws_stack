@@ -39,7 +39,7 @@ nodegroups = {
     role              = "controller"
     public            = t
     user_data         = ""
-    k0s_install_flags = ""
+    k0s_install_flags = []
   },
   "AWrk_1" = { // workers for A
     platform          = "ubuntu_20.04"
@@ -49,7 +49,7 @@ nodegroups = {
     public            = true
     role              = "worker"
     user_data         = ""
-    k0s_install_flags = ""
+    k0s_install_flags = []
   }
 }
 

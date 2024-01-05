@@ -6,7 +6,9 @@ locals {
 
 # PROVISION MACHINES/NETWORK
 module "provision" {
-  source = "./provision"
+  source  = "terraform-mirantis-modules/k0s-aws-ops/mirantis"
+  version = "0.0.2"
+
   region = var.aws.region
 
   name = var.name
